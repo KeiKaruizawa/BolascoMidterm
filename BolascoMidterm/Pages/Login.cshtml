@@ -1,0 +1,66 @@
+﻿@page
+@model BolascoMidterm.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+
+            <!-- LEFT IMAGE PANEL -->
+            <div class="col-md-6 d-none d-md-block login-bg"></div>
+
+            <!-- RIGHT LOGIN PANEL -->
+            <div class="col-md-6 login-panel position-relative d-flex align-items-center justify-content-center">
+
+                <!-- BACK BUTTON (TOP-RIGHT) -->
+                <a asp-page="/Index" class="back-btn-top">
+                    ← Back
+                </a>
+
+                <div class="login-box w-75">
+                    <h2 class="mb-2">Welcome Back</h2>
+                    <p class="mb-4">Please login to your account</p>
+
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter password" />
+                        </div>
+
+                        <div class="mb-4 text-end">
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-login w-100">
+                            Login
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
