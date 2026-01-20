@@ -215,6 +215,59 @@ html, body {
     }
 }
 
+/* SUCCESS MESSAGE BOX */
+.success-message-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 400px;
+    background-color: #f0f9f4;
+    border: 1px solid #9b6dcc;
+    border-left: 4px solid #9b6dcc;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #2d5f3f;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.4s ease;
+}
+
+.success-icon {
+    font-size: 24px;
+    color: #9b6dcc;
+}
+
+.success-message-box .btn-close {
+    margin-left: auto;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Auto-hide after 5 seconds */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 /* FLOATING BUBBLES  */
 .right-bubbles {
     position: absolute;

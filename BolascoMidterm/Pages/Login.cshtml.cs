@@ -25,13 +25,15 @@ namespace BolascoMidterm.Pages
         {
             if (Username == validUsername && Password == validPassword)
             {
-                
+                // Successful login - success message and redirect
+                TempData["SuccessMessage"] = "Welcome back! You have successfully logged in.";
                 return RedirectToPage("/Index");
             }
             else
             {
-               //
+                // Failed login - clear inputs, show error
                 ErrorMessage = "Invalid email or password. Please try again.";
+                ModelState.Clear(); // clears the form state
                 Username = string.Empty;
                 Password = string.Empty;
                 return Page();
