@@ -26,7 +26,6 @@ namespace BolascoMidterm.Pages
             if (Username == validUsername && Password == validPassword)
             {
                 // Successful login - success message and redirect
-                TempData["SuccessMessage"] = "Welcome back! You have successfully logged in.";
                 return RedirectToPage("/Index");
             }
             else

@@ -2,7 +2,7 @@
 @model BolascoMidterm.Pages.LoginModel
 @{
     ViewData["Title"] = "Login";
-    Layout = null;  <!-- remove navbar -->
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -13,7 +13,6 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
-    <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -34,7 +33,7 @@
                 </div>
 
                 <!-- Back Button -->
-                <a href="/Index" class="back-btn-top">← Back to Home</a>
+                <a asp-page="/Index" class="back-btn-top">← Back to Home</a>
 
                 <!-- Login Form -->
                 <div class="login-box w-75">
@@ -43,15 +42,25 @@
 
                     <form method="post">
                         <div class="mb-3">
-                            <label class="form-label" asp-for="Username">Email Address</label>
-                            <input type="email" asp-for="Username" class="form-control" placeholder="your@email.com" required />
+                            <label for="Username" class="form-label">Email Address</label>
+                            <input type="email"
+                                   asp-for="Username"
+                                   class="form-control"
+                                   placeholder="your@email.com"
+                                   autocomplete="email"
+                                   required />
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" asp-for="Password">Password</label>
+                            <label for="Password" class="form-label">Password</label>
                             <div class="password-wrapper">
-                                <input type="password" asp-for="Password" id="passwordInput" class="form-control" placeholder="Enter your password" required />
-                                <span class="material-icons password-toggle" id="togglePassword">visibility_off</span>
+                                <input type="password"
+                                       asp-for="Password"
+                                       class="form-control"
+                                       placeholder="Enter your password"
+                                       autocomplete="current-password"
+                                       required />
+                                <span class="material-icons password-toggle" onclick="togglePasswordVisibility()">visibility_off</span>
                             </div>
                         </div>
 
@@ -65,7 +74,7 @@
                             <a href="#" class="forgot-link">Forgot your password?</a>
                         </div>
 
-                        <!-- Error Message Display -->
+                        <!-- Error Message -->
                         @if (!string.IsNullOrEmpty(Model.ErrorMessage))
                         {
                             <div class="error-message mb-3" role="alert">
@@ -84,18 +93,18 @@
     </div>
 
     <script>
-        // Password visibility toggle
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('passwordInput');
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('Password');
+            const toggleIcon = document.querySelector('.password-toggle');
 
-        togglePassword.addEventListener('click', function() {
-            // Toggle password visibility
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-
-            // Toggle icon
-            this.textContent = type === 'password' ? 'visibility_off' : 'visibility';
-        });
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = 'visibility';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = 'visibility_off';
+            }
+        }
     </script>
 </body>
 </html>
