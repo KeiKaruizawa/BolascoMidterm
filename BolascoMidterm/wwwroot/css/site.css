@@ -257,6 +257,25 @@ html, body {
     }
 }
 
+/* REGISTER LINK (Below login button) */
+.register-text {
+    color: #8c6fae;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.register-link {
+    color: #9b6dcc;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .register-link:hover {
+        color: #7a4c9e;
+        text-decoration: underline;
+    }
+
 /* FLOATING BUBBLES  */
 .right-bubbles {
     position: absolute;
