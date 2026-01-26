@@ -45,7 +45,7 @@ html, body {
 }
 
 /* BACK BUTTON */
-.back-btn-top {
+/*.back-btn-top {
     position: absolute;
     top: 25px;
     right: 30px;
@@ -59,7 +59,7 @@ html, body {
     .back-btn-top:hover {
         color: #7a4c9e;
         text-decoration: none;
-    }
+    }*/
 
 /* LOGIN BOX */
 .login-box {
@@ -201,6 +201,32 @@ html, body {
 
 .error-icon {
     font-size: 20px;
+}
+
+/* LOGOUT MODAL STYLING - Simple & Compact */
+#logoutModal .modal-content {
+    border-radius: 10px;
+}
+
+#logoutModal .modal-title {
+    color: #7a4c9e;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#logoutModal .modal-body {
+    color: #6b5b7a;
+    font-size: 14px;
+}
+
+#logoutModal .btn-login {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+#logoutModal .btn-secondary {
+    padding: 8px 16px;
+    font-size: 14px;
 }
 
 @keyframes slideDown {
